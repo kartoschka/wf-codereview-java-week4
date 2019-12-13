@@ -1,0 +1,46 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="at.oidastore.ProductEditController">
+        <GridPane vgap="10" hgap="5" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0">Product Name:</Label>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1">Quantity:</Label>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2">Old Price:</Label>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="3">New Price:</Label>
+
+            <TextField fx:id="prodNameTxtFld" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+<TextField fx:id="prodQuantTxtFld" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="prodOldPriceTxtFld"/>
+                <Label>EUR</Label>
+            </HBox>
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <TextField fx:id="prodNewPriceTxtFld"/>
+                <Label>EUR</Label>
+            </HBox>
+            <Button fx:id="prodUpdateBtn" GridPane.columnIndex="0" GridPane.rowIndex="4">Update</Button>
+        </GridPane>
+
+        <VBox AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" style="-fx-background-color: #fff;">
+            <ImageView fx:id="prodImageView"
+                       fitHeight="200" fitWidth="200" preserveRatio="true" smooth="true" />
+            <Text>Description: </Text>
+            <Text fx:id="prodDescription"/>
+        </VBox>
+
+    <VBox AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10">
+        <ListView fx:id="productList" style="-fx-font-size: 0.8em;"/>
+        <Button fx:id="prodListReportBtn">Print Report</Button>
+    </VBox>
+</AnchorPane>
